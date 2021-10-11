@@ -1,7 +1,7 @@
 import Dependencies._
 
 ThisBuild / scalaVersion := "2.13.3"
-ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / version := "0.1.0"
 ThisBuild / organization := "net.cipherdogs"
 ThisBuild / organizationName := "cipherdogs"
 ThisBuild / semanticdbEnabled := true
@@ -10,7 +10,7 @@ ThisBuild / scalafixScalaBinaryVersion := scalaBinaryVersion.value
 
 lazy val root = (project in file("."))
   .settings(
-    name := "example",
+    name := "punk-generator",
     // Warn if an import selector is not referenced.
     scalacOptions += "-Wunused:imports",
     libraryDependencies += scalaTest % Test
