@@ -27,6 +27,6 @@ object Main extends App {
     ImageIO.write(canvas, "png", new java.io.File("punk.png"));
     println("Done!")
   } catch {
-    case _: Throwable => println("Invalid code for generation\nRun: java -jar punk-generator-assembly-0.1.0.jar")
+    case _: Throwable => println("Invalid code for generation\nExample: java -jar punk-generator-assembly-0.1.0.jar 1 3 2 3 3 3 3")
   }
 }
