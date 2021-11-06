@@ -16,12 +16,17 @@ object Main extends App {
 
   val parts: List[String] = List("face", "mouth", "nose", "eyes", "ears", "beard", "hair");
 
-  parts
-    .zip(0 until parts.size)
-    .foreach(tuple => {
-      val image: Image = new ImageIcon(getClass.getResource("/parts/" + tuple._1 + "/" + tuple._1 + "2.png")).getImage;
-      g.drawImage(image, 0, 0, 24, 24, null);
-    });
+  try {
+    parts
+      .zip(0 until parts.size)
+      .foreach(tuple => {
+        val image: Image = new ImageIcon(getClass.getResource("/parts/" + tuple._1 + "/" + tuple._1 + args(tuple._2) + ".png")).getImage;
+        g.drawImage(image, 0, 0, 24, 24, null);
+      });
 
-  ImageIO.write(canvas, "png", new java.io.File("punk.png"));
+    ImageIO.write(canvas, "png", new java.io.File("punk.png"));
+    println("Done!")
+  } catch {
+    case _: Throwable => println("Invalid code for generation\nRun: java -jar punk-generator-assembly-0.1.0.jar")
+  }
 }
